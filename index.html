@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#10172b" />
+  <title>Aether Guardians: Shattered World</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-mark">✦</div><p class="eyebrow">THE AETHER AWAKENS</p>
+    <h1>AETHER <span>GUARDIANS</span></h1><p class="loading-subtitle">SHATTERED WORLD</p>
+    <div class="loading-track"><i></i></div><small>Preparing the realm…</small>
+  </div>
+  <section id="auth-screen" class="auth-screen hidden">
+    <div class="auth-art"><div class="moon"></div><div class="auth-sigil">✧</div><div class="auth-copy"><p class="eyebrow">A WORLD ON THE EDGE OF ETERNITY</p><h1>Bind your soul<br>to the <em>Aether.</em></h1><p>Gather your guardians. Restore the shattered realms.</p></div></div>
+    <div class="auth-panel"><div class="brand-mini">✦ AETHER GUARDIANS</div><div class="auth-form-wrap"><p class="eyebrow" id="auth-kicker">YOUR JOURNEY BEGINS</p><h2 id="auth-title">Welcome, Guardian</h2><p class="muted" id="auth-description">Enter the realm and continue your legend.</p>
+      <form id="auth-form"><label>Guardian name<input id="auth-name" autocomplete="nickname" placeholder="Choose a name" maxlength="18" required /></label><label>Email address<input id="auth-email" type="email" autocomplete="email" placeholder="you@example.com" required /></label><label>Password<input id="auth-password" type="password" autocomplete="current-password" minlength="6" placeholder="At least 6 characters" required /></label><button class="primary-btn full" id="auth-submit">Enter the Realm <span>↗</span></button></form>
+      <p class="auth-switch"><span id="auth-switch-copy">New to the realm?</span> <button class="text-btn" id="auth-switch" type="button">Create account</button></p><p class="auth-note" id="auth-note">Demo mode saves to this browser. Add Firebase keys to enable cloud accounts.</p>
+    </div></div>
+  </section>
+  <div id="game-shell" class="game-shell hidden">
+    <aside class="sidebar"><a class="side-brand" href="#"><span class="brand-gem">✦</span><span>AETHER<br><b>GUARDIANS</b></span></a><div class="profile-mini"><div class="avatar-orb">✧</div><div><strong id="profile-name">Wayfarer</strong><small id="profile-level">Level 1 · Wayfarer</small></div><button class="icon-btn" id="logout-btn" title="Log out">↪</button></div>
+      <p class="nav-label">REALM</p><nav id="main-nav"><button class="nav-item active" data-view="home"><span>⌂</span> Overview</button><button class="nav-item" data-view="adventure"><span>⚔</span> Adventure <i>50</i></button><button class="nav-item" data-view="guardians"><span>♙</span> Guardians <i id="guardian-count">1/10</i></button><button class="nav-item" data-view="summon"><span>✧</span> Summoning</button><button class="nav-item" data-view="inventory"><span>▤</span> Inventory</button><button class="nav-item" data-view="arena"><span>⚡</span> PvP Arena <small>AI</small></button></nav>
+      <div class="sidebar-bottom"><div class="season-card"><div class="season-icon">◈</div><small>SEASON I</small><strong>The Shattered Sky</strong><span>Restore the 10 realms</span><div class="season-progress"><i id="season-progress"></i></div></div><div class="online-status"><span></span> Realm connection stable</div></div>
+    </aside>
+    <main class="main-area"><header class="topbar"><div><p class="eyebrow" id="page-eyebrow">YOUR DESTINY AWAITS</p><h1 id="page-title">Welcome back, Guardian</h1></div><div class="resource-bar"><div class="resource"><span class="resource-icon gold">◉</span><div><small>COINS</small><strong id="coins-value">1,000</strong></div><button class="plus-btn" data-view="summon">+</button></div><div class="resource"><span class="resource-icon gem">◆</span><div><small>GEMS</small><strong id="gems-value">120</strong></div><button class="plus-btn" data-view="summon">+</button></div><div class="resource"><span class="resource-icon energy">ϟ</span><div><small>ENERGY</small><strong id="energy-value">20/20</strong></div></div></div></header>
+      <div id="toast" class="toast hidden"></div><section id="view-home" class="view"></section><section id="view-adventure" class="view hidden"></section><section id="view-guardians" class="view hidden"></section><section id="view-summon" class="view hidden"></section><section id="view-inventory" class="view hidden"></section><section id="view-arena" class="view hidden"></section>
+      <footer class="footer"><span>✦ AETHER GUARDIANS: SHATTERED WORLD</span><span>Every soul has a story.</span></footer>
+    </main>
+  </div>
+  <div id="battle-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="battle-title"><div class="battle-window"><div class="battle-top"><div><p class="eyebrow">REALM ENCOUNTER</p><h2 id="battle-title">Battle</h2></div><button class="icon-btn" id="battle-close" aria-label="Close battle">×</button></div><div id="battle-scene" class="battle-scene"><div class="battle-stars"></div><div id="battle-enemies" class="battle-side enemy-side"></div><div id="battle-allies" class="battle-side ally-side"></div><div class="battle-ground"></div></div><div class="battle-status"><span id="battle-turn">YOUR TURN</span><span id="battle-round">Round 1</span></div><div id="battle-log" class="battle-log">Choose a skill to begin.</div><div id="battle-actions" class="battle-actions"></div><div id="battle-result" class="battle-result hidden"></div></div></div>
+  <script type="module" src="game.js"></script>
+</body></html>
